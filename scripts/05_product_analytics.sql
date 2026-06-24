@@ -1,7 +1,7 @@
 -- Top product
 
 SELECT pr.product_name,
-ROUND(SUM(p.total_amount::integer), 2)
+ROUND(SUM(p.total_amount::numeric), 2)
 FROM purchases as p
 JOIN products as pr
 ON p.product_id = pr.product_id
@@ -11,7 +11,7 @@ ORDER BY SUM(p.total_amount) DESC;
 -- Revenue by category
 
 SELECT pr.category,
-ROUND(SUM(p.total_amount::integer),2) as revenue
+ROUND(SUM(p.total_amount::numeric),2) as revenue
 FROM purchases as p
 JOIN products as pr
 ON p.product_id = pr.product_id
