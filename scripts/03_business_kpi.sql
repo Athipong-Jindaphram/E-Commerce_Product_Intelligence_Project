@@ -10,5 +10,5 @@ FROM purchases;
 
 -- Average order value
 
-SELECT ROUND(SUM(total_amount::integer) / COUNT(DISTINCT order_id), 2)
+SELECT ROUND(SUM(total_amount::numeric) / COUNT(DISTINCT order_id), 2)
 FROM purchases;
